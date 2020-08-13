@@ -22,6 +22,48 @@
     <?php include 'header.php'; ?>
 
     <!-- Edit Location Field -->
+    <h1 class="text-center mt-3">Edit Location</h1>
+    <div class="container">
+        <form action="" method="POST">
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="EditLocation">Edit Location</label>
+                    <select class="form-control" id="editLocation">
+                        <option>Location1</option>
+                        <option>Location2</option>
+                        <option>Location3</option>
+                        <option>Location4</option>
+                    </select>
+                </div>
+
+                <!-- Start coordinate field here -->
+                <div class="form-group">
+                    <label for="Coordinate">Coordinate</label>
+                    <input type="text" class="form-control" id="Coordinate" name="Coordinate" placeholder="Enter Coordinate">
+                </div>
+                <!-- End coordinate field here -->
+
+                <!-- Start MinTime field here -->
+                <div class="form-group">
+                    <label for="MinTime">MinTime</label>
+                    <input type="number" class="form-control" id="MinTime" name="MinTime" placeholder="Enter MinTime">
+                </div>
+                <!-- End MinTime field here -->
+
+                <!-- Start Description textarea here -->
+                <div class="form-row">
+                    <div class="col">
+                        <label for="Description">Description</label>
+                        <textarea class="form-control" id="Description" name="Description" placeholder="Enter Description" rows="10" cols="30"> </textarea>
+                    </div>
+                </div>
+                <!-- End Description textarea here -->
+
+                <!-- put submit buttom here -->
+                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
 
     <!-- Edit Location Field -->
 
