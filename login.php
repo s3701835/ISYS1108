@@ -1,3 +1,8 @@
+<?php 
+session_start();
+require_once 'config.php';
+?>
+
 <html>
 
 <head>
@@ -28,7 +33,6 @@
     <div class="container">
         <form action="/tour-management-system/login.php" method="POST">
 
-            <!-- Email Address Form -->
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address" value="">
@@ -38,10 +42,7 @@
                     </p>
                 </div>
             </div>
-            <!-- Email Address Form -->
 
-
-            <!-- Password Form -->
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" value="">
@@ -50,16 +51,12 @@
                     <p class="text-danger"></p>
                 </div>
             </div>
-            <!-- Password Form -->
 
-
-            <!-- Submit -->
             <div>
                 <p class="text-danger"></p>
             </div>
                 
             <button type="submit" class="btn btn-primary btn-block">Login</button>
-            <!-- Submit -->
 
         </form>
     </div>

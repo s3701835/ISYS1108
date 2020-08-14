@@ -1,5 +1,6 @@
 <?php 
 session_start();
+require_once 'config.php';
 
 $location_name = $location_coordinate = $location_min_time = $location_description = '';
 $location_name_error = $location_coordinate_error = $location_min_time_error = $location_description_error = '';
