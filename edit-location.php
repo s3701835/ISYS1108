@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+$location_name = $location_coordinate = $location_min_time = $location_description = '';
+$location_name_error = $location_coordinate_error = $location_min_time_error = $location_description_error = '';
+
+?>
+
 <html>
 
 <head>
@@ -23,45 +31,71 @@
 
     <!-- Edit Location Field -->
     <h1 class="text-center mt-3">Edit Location</h1>
+
     <div class="container">
+
+        <div class="py-4">
+            <select class="form-control" id="editLocation" name="editLocation">
+                <option value="" selected>Select Location</option>
+            </select>
+        </div>
+
+        <!-- Form shows only when Admin selects location -->
         <form action="" method="POST">
-            <div class="form-group">
-                <div class="form-group">
-                    <label for="EditLocation">Edit Location</label>
-                    <select class="form-control" id="editLocation">
-                        <option>Location1</option>
-                        <option>Location2</option>
-                        <option>Location3</option>
-                        <option>Location4</option>
-                    </select>
-                </div>
+            <input type="hidden" id="id" name="id">
 
-                <!-- Start coordinate field here -->
-                <div class="form-group">
-                    <label for="Coordinate">Coordinate</label>
-                    <input type="text" class="form-control" id="Coordinate" name="Coordinate" placeholder="Enter Coordinate">
-                </div>
-                <!-- End coordinate field here -->
-
-                <!-- Start MinTime field here -->
-                <div class="form-group">
-                    <label for="MinTime">MinTime</label>
-                    <input type="number" class="form-control" id="MinTime" name="MinTime" placeholder="Enter MinTime">
-                </div>
-                <!-- End MinTime field here -->
-
-                <!-- Start Description textarea here -->
-                <div class="form-row">
-                    <div class="col">
-                        <label for="Description">Description</label>
-                        <textarea class="form-control" id="Description" name="Description" placeholder="Enter Description" rows="10" cols="30"> </textarea>
+            <div id="locationInfo" class="">
+                <div class="form-group row">
+                    <label for="locationName" class="col-sm-2 col-form-label">Location Name</label>
+                
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control <?php echo (!empty($location_name_error)) ? 'border border-danger' : ''; ?>" id="locationName" name="locationName" placeholder="Location Name" value="<?php echo $_POST['locationName']; ?>">
+                    
+                        <p class="text-danger">
+                            <?php echo $location_name_error; ?>
+                        </p>
                     </div>
                 </div>
-                <!-- End Description textarea here -->
 
-                <!-- put submit buttom here -->
+                <div class="form-group row">
+                    <label for="Coordinate" class="col-sm-2 col-form-label">Coordinate</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control <?php echo (!empty($location_coordinate_error)) ? 'border border-danger' : ''; ?>" id="Coordinate" name="Coordinate" placeholder="Enter Coordinate" value="<?php echo $_POST['Coordinate']; ?>">
+                    
+                        <p class="text-danger">
+                            <?php echo $location_coordinate_error; ?>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="MinTime" class="col-sm-2 col-form-label">MinTime</label>
+                    
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control <?php echo (!empty($location_min_time_error)) ? 'border border-danger' : ''; ?>" id="MinTime" name="MinTime" placeholder="Enter MinTime" value="<?php echo $_POST['MinTime']; ?>">
+                    
+                        <p class="text-danger">
+                            <?php echo $location_min_time_error; ?>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="form-row row">
+                    <label for="Description" class="col-sm-2 col-form-label">Description</label>
+
+                    <div class="col-sm-10">
+                        <textarea class="form-control <?php echo (!empty($location_description_error)) ? 'border border-danger' : ''; ?>" id="Description" name="Description" placeholder="Enter Description" rows="10" cols="30"><?php echo $_POST['Description']; ?></textarea>
+                    
+                        <p class="text-danger">
+                            <?php echo $location_description_error; ?>
+                        </p>
+                    </div>
+                </div>
+                
                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>
             </div>
+
         </form>
     </div>
 

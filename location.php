@@ -17,24 +17,24 @@ $location_name_error = $location_coordinate_error = $location_min_time_error = $
         }
 
         //Coordinate: Validate and submit
-        if (empty(trim($_POST['coordinate']))) {
+        if (empty(trim($_POST['Coordinate']))) {
             $location_coordinate_error = "Please enter location coordinates.";
         } else {
-            $location_coordinate = (trim($_POST['coordinate']));
+            $location_coordinate = (trim($_POST['Coordinate']));
         }
 
         //Minimum Time: Validate and submit
-        if (empty(trim($_POST['mintime']))) {
+        if (empty(trim($_POST['MinTime']))) {
             $location_min_time_error = "Please enter the minimum time.";
         } else {
-            $location_min_time = (trim($_POST['mintime']));
+            $location_min_time = (trim($_POST['MinTime']));
         }
 
         //Description: Validate and submit
-        if (empty(trim($_POST['description']))) {
+        if (empty(trim($_POST['Description']))) {
             $location_description_error = "Please enter a description of the location.";
         } else {
-            $location_description = (trim($_POST['description']));
+            $location_description = (trim($_POST['Description']));
         }
     }
 //}
@@ -74,30 +74,23 @@ $location_name_error = $location_coordinate_error = $location_min_time_error = $
                     <input type="text" class="form-control" id="LocationName" name="LocationName" placeholder="Add Location Name">
                 </div>
 
-                <!-- Start coordinate field here -->
                 <div class="form-group">
                     <label for="Coordinate">Coordinate</label>
                     <input type="text" class="form-control" id="Coordinate" name="Coordinate" placeholder="Enter Coordinate">
                 </div>
-                <!-- End coordinate field here -->
-
-                <!-- Start MinTime field here -->
+            
                 <div class="form-group">
                     <label for="MinTime">MinTime</label>
                     <input type="number" class="form-control" id="MinTime" name="MinTime" placeholder="Enter MinTime">
                 </div>
-                <!-- End MinTime field here -->
-
-                <!-- Start Description textarea here -->
+                
                 <div class="form-row">
                     <div class="col">
                         <label for="Description">Description</label>
                         <textarea class="form-control" id="Description" name="Description" placeholder="Enter Description" rows="10" cols="30"> </textarea>
                     </div>
                 </div>
-                <!-- End Description textarea here -->
-
-                <!-- put submit buttom here -->
+                
                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
